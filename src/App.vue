@@ -1,10 +1,12 @@
 <template>
   <header>
-    <button @click="fetchNodes">
+    <button @click="fetchNodes" data-cy="fetch-nodes-button">
       Fetch Nodes
     </button>
-    <node-tree :nodes="parentNodes" :selectedId="selectedId" @nodeSelected="fetchChildrens" />
-    <node-tree :nodes="childrens" :selectedId="selectedId" @nodeSelected="fetchChildrens"/>
+    <div data-cy="parent-nodes">
+      <node-tree :nodes="parentNodes" :selectedId="selectedId" @nodeSelected="fetchChildrens" />
+    </div>
+    <node-tree :nodes="childrens" :selectedId="selectedId" @nodeSelected="fetchChildrens" />
   </header>
 </template>
 
@@ -12,7 +14,7 @@
 import { useStore } from 'vuex';
 import { computed } from 'vue'
 import NodeTree from './components/NodeTree.vue';
-import {ref, reactive} from 'vue';
+import { ref, reactive } from 'vue';
 
 export default {
   components: {
@@ -33,15 +35,15 @@ export default {
       store.dispatch('nodes/displayParentNode');
     }
 
-    const  fetchChildrens = (node) => {
+    const fetchChildrens = (node) => {
       selectedId.value = node.name;
       store.dispatch('nodes/fetchChildrens', node);
     }
-    
+
     const parentNodes = computed(() => {
       return store.state.nodes.parentNodes
     })
-    
+
     childrens = computed(() => {
       return store.state.nodes.childNodes
     })

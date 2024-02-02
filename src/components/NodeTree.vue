@@ -1,5 +1,5 @@
 <template>
-  <div class="cards">
+  <div data-cy="nodes-data" class="cards">
     <card v-for="p in nodes" :key="p.name" @click="click(p)"
       :class="{ opace: p.name !== selectedId, selected: p.name === selectedId }" class="card">
       <template v-slot:title>
@@ -16,9 +16,9 @@
     </card>
   </div>
   <teleport to="body">
-    <div v-if="showPopup" class="popup">
+    <div data-cy="sidebar-popup" v-if="showPopup"  class="popup">
       <div>{{ description }}</div>
-      <button class="button" @click="closePopup">Close</button>
+      <button data-cy="close-button" class="button" @click="closePopup">Close</button>
     </div>
   </teleport>
 </template>

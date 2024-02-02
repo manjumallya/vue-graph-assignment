@@ -1,5 +1,5 @@
 # vue-graph
-This project is built on VueJS framework making use of state management features of VueX store to interact between different components.Made use of following vue js features-Options API, Composition API, Event emitters, Reactive state properties and Teleport. 
+This project is built on VueJS framework and javascript making use of state management features of VueX store to interact between different components.Made use of following vue js features-Options API, Composition API, Event emitters, Reactive state properties and Teleport. 
 
 Most of the business logic stays in the vuex store and presentation is done in the components created. The components and vuex store are re-usable , mainataibale and readable. 
 

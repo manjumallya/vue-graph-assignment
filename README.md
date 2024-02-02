@@ -14,14 +14,22 @@ On click of any node, card gets highlighted and a popup is opened to display the
 
 # NON FUNCTIONAL REQUIREMENTS
 • This assignment should contain the source files in one repository.
+
 • You can read the data from a database or copy the data into your code.
+
 • As a data store we recommend you to use graph database you are comfortable with.
+
 • We expect from you to create a express.js server which has a GET endpoint which
 serves the data with correct hierarchy.
+
 • Read the data from database and serve it to frontend with JSON format.
+
 • Read the data from Backend via GET endpoint
+
 • Please feel free to use a front-end visualization library like D3.js.
+
 • You can use plain VanillaJS or VueJS
+
 • Usage of TypeScript, Sass, Webpack is your consideration
 
 # vue-graph-assignment
@@ -74,4 +82,6 @@ https://65bcacc1dcec1358a80d2e66--animated-narwhal-4a9062.netlify.app/
 1. Child nodes are loaded on the same grid instead of hierearchial loading. Using recursive component tried to fix the issue but did not work as expected.
 
 # Future scope
-Connecting to a database and fetching the data from the database. Currently data is stored locally in the express server module.
+1. Connecting to a database and fetching the data from the database. Currently data is stored locally in the express server module.
+2. Making use of any front end visualization library to display the nodes
+

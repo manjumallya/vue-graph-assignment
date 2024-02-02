@@ -5,7 +5,7 @@ Most of the business logic stays in the vuex store and presentation is done in t
 
 The automation suite used is Cypress framework to run end to end tests.
 
-The application is deployed at following location - [https://happy-franklin-7614c8.netlify.app/](https://65bcacc1dcec1358a80d2e66--animated-narwhal-4a9062.netlify.app/) using netlify app
+The application is deployed at following location - https://65bcacc1dcec1358a80d2e66--animated-narwhal-4a9062.netlify.app/ using netlify app
 
 # Description of the project
 The application is a single page application. On load Fetch Nodes button is displayed. On click of the button, parent nodes are displayed. On click of the parent node, heirarchical nodes are displayed. 

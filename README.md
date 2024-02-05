@@ -3,6 +3,8 @@ This project is built on VueJS framework and javascript making use of state mana
 
 Most of the business logic stays in the vuex store and presentation is done in the components created. The components and vuex store are re-usable , mainataibale and readable. 
 
+Express server is the backend which hosts the api to send the data to FE using the GET call.
+
 The automation suite used is Cypress framework to run end to end tests.
 
 The application is deployed at following location - https://65bcacc1dcec1358a80d2e66--animated-narwhal-4a9062.netlify.app/ using netlify app
@@ -54,6 +56,12 @@ npm install
 
 ```sh
 npm run dev
+```
+
+### Express server
+```sh
+cd src/express
+node server.js
 ```
 
 ### Compile and Minify for Production

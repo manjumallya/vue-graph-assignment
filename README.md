@@ -83,6 +83,9 @@ npm run test:e2e # or `npm run test:e2e:ci` for headless testing
 ### Production deployed version
 
 ```sh
+Run express server locally
+node src/express/server.js
+
 https://65bcacc1dcec1358a80d2e66--animated-narwhal-4a9062.netlify.app/
 ```
 

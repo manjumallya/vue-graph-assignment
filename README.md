@@ -58,12 +58,6 @@ npm install
 npm run dev
 ```
 
-### Express server
-```sh
-cd src/express
-node server.js
-```
-
 ### Compile and Minify for Production
 
 ```sh
@@ -73,10 +67,7 @@ npm run build
 ### Run End-to-End Tests with [Cypress](https://www.cypress.io/)
 
 ```sh
-npm run build
 npm run dev
-cd src/express
-node server.js
 npm run test:e2e # or `npm run test:e2e:ci` for headless testing
 ```
 

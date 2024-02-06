@@ -7,7 +7,7 @@ Express server is the backend which hosts the api to send the data to FE using t
 
 The automation suite used is Cypress framework to run end to end tests.
 
-The application is deployed at following location - https://65bcacc1dcec1358a80d2e66--animated-narwhal-4a9062.netlify.app/ using netlify app
+The application is deployed at following location - https://vue-graph-nodes.netlify.app/ using netlify app
 
 # Description of the project
 The application is a single page application. On load Fetch Nodes button is displayed. On click of the button, parent nodes are displayed. On click of the parent node, heirarchical nodes are displayed. 
@@ -77,7 +77,7 @@ npm run test:e2e # or `npm run test:e2e:ci` for headless testing
 Run express server locally
 node src/express/server.js
 
-https://65bcacc1dcec1358a80d2e66--animated-narwhal-4a9062.netlify.app/
+https://vue-graph-nodes.netlify.app/
 ```
 
 # Issues noticed in app

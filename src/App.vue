@@ -3,6 +3,9 @@
     <button @click="fetchNodes" data-cy="fetch-nodes-button">
       Fetch Nodes
     </button>
+    <div v-if="isFetchNodesClicked && parentNodes?.length === 0" class="message">
+      No nodes to display or error fetching data
+    </div>
     <div data-cy="parent-nodes">
       <node-tree :nodes="parentNodes" :selectedId="selectedId" @nodeSelected="fetchChildrens" />
     </div>
@@ -25,8 +28,11 @@ export default {
     const store = useStore();
     let childrens = reactive([]);
     const selectedId = ref('');
+    let parentNodes = reactive([]);
+    const isFetchNodesClicked = ref(false)
 
     const fetchNodes = async () => {
+      isFetchNodesClicked.value = true;
       await store.dispatch('nodes/fetchData')
       displayParentNode();
     }
@@ -40,7 +46,7 @@ export default {
       store.dispatch('nodes/fetchChildrens', node);
     }
 
-    const parentNodes = computed(() => {
+    parentNodes = computed(() => {
       return store.state.nodes.parentNodes
     })
 
@@ -54,9 +60,17 @@ export default {
       childrens,
       fetchChildrens,
       displayParentNode,
-      selectedId
+      selectedId,
+      isFetchNodesClicked
     }
   }
 
 }
 </script>
+<style scoped>
+.message{
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+</style>

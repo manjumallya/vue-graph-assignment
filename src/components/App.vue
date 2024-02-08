@@ -1,7 +1,7 @@
 <template>
   <header>
     <button @click="fetchNodes" data-cy="fetch-nodes-button" :disabled="isFetchNodesClicked">
-      {{ isFetchNodesClicked ? 'Fetching...' : 'FetchNodes' }}
+      {{ isFetchNodesClicked ? 'Fetching...' : 'Fetch Nodes' }}
     </button>
     <div v-if="showNoNodesMessage" class="message">
       {{ errorMessage }}

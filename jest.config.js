@@ -1,4 +1,5 @@
 module.exports = {
+  verbose: true,
   transform: {
     "\\.[jt]sx?$": 'babel-jest',
     "^.+\\.js$": "babel-jest",
@@ -15,7 +16,7 @@ module.exports = {
   collectCoverage: true,
   collectCoverageFrom: [
     "src/components/**/*.{js}",
-    "src/vuex/**/*.{js}",
+    "src/store/**/*.{js}",
     "!**/node_modules/**",
     "**/*.{js}",
   ],
@@ -23,5 +24,8 @@ module.exports = {
     "html",
     "text-summary"
   ],
-  testEnvironment: "node"
+  testEnvironment: "node",
+  transformIgnorePatterns: [
+    "/node_modules/(?!axios)/"
+  ]
 };

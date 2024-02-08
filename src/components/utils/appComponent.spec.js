@@ -49,7 +49,7 @@ describe('appComponentSetup', () => {
 
   it('fetchChildren updates selectedNode and calls the correct action', () => {
     const { fetchChildren, selectedNode } = appComponentSetup();
-    const node = { id: 1, name: 'Node 1' };
+    const node = { description: 'This is a description of A', parent:'' };
     fetchChildren(node);
     expect(selectedNode.value).toEqual(node);
     expect(dispatch).toHaveBeenCalledWith('nodes/fetchChildren', node);

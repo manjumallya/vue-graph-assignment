@@ -1,5 +1,4 @@
 import axios from 'axios'
-import { threadId } from 'worker_threads';
 
 export const nodes = {
     namespaced: true,
@@ -49,11 +48,6 @@ export const nodes = {
             )
             if(filteredData.length > 0)
                 ctx.commit('SET_CHILD_NODES', filteredData);
-        }
-    },
-    getters: {
-        getCards(state) {
-            return state.cards;
         }
     }
 }

@@ -11,6 +11,12 @@ app.listen(8080, () => {
 })
 
 app.get('/api/data', (req, res) => {
-    const response = testData;
-    res.send(response);
+    new Promise((resolve) => {
+        setTimeout(() => {
+            const response = testData;
+            resolve(response);
+        },2000);
+    }).then((response) => {
+        res.send(response);
+    })
 })

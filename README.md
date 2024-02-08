@@ -4,7 +4,8 @@ This project is built on VueJS framework and javascript making use of state mana
 Most of the business logic stays in the vuex store and presentation is done in the components created. The components and vuex store are re-usable , mainataibale and readable. 
 
 Express server is the backend which hosts the api to send the data to FE using the GET call.
-Unit testing tool configured is Jest
+
+Unit testing tool configured is Jest.
 The automation suite used is Cypress framework to run end to end tests.
 
 The application is deployed at following location - https://vue-graph-nodes.netlify.app/ using netlify app

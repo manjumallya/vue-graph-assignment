@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { threadId } from 'worker_threads';
 
 export const nodes = {
     namespaced: true,
@@ -22,23 +23,27 @@ export const nodes = {
         }
     },
     actions: {
-        async fetchData(ctx) {
+        async fetchNodes(ctx) {
             try {
                 const response = await axios.get('http://localhost:8080/api/data')
                 ctx.commit('SET_DATA', response.data.data);
                 ctx.commit('SET_PARENT_NODES', []);
                 ctx.commit('SET_CHILD_NODES', []);
             } catch (error) {
+                ctx.commit('SET_DATA', []);
+                ctx.commit('SET_PARENT_NODES', []);
+                ctx.commit('SET_CHILD_NODES', []);
                 console.error('Error fetching data', error)
+                throw error;
             }
         },
-        displayParentNode(ctx) {
+        fetchParentNodes(ctx) {
            const filteredData = ctx.state.cards.filter(card => 
              card.parent === ""
            )
             ctx.commit('SET_PARENT_NODES', filteredData);
         },
-        fetchChildrens(ctx, node) {
+        fetchChildren(ctx, node) {
             const filteredData = ctx.state.cards.filter(card => 
                 card.parent === node.name
             )

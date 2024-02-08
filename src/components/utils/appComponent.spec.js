@@ -28,11 +28,10 @@ describe('appComponentSetup', () => {
     useStore.mockReturnValue(store);
   });
 
-  it('fetchNodes sets isFetchNodesClicked to true and calls fetchParentNodes', () => {
+  it('fetchNodes sets isFetchNodesClicked to true and calls fetchNodes', () => {
     const {
       isFetchNodesClicked,
-      fetchNodes,
-      fetchParentNodes
+      fetchNodes
     } = appComponentSetup();
 
      fetchNodes();
